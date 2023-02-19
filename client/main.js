@@ -10,6 +10,55 @@ const movieList = document.querySelector('ul')
 
 const baseURL = 'http://localhost:4000/api/movies/'
 
+// const displayCallBack = ({ data: images }) => displayImg(images)
+const gameBtn = document.querySelector("#get-games")
+// const forms = document.querySelector('#forms')
+// let imgURL = document.querySelector('#img')
+
+// function displayImg(arr) {
+//     housesContainer.innerHTML = ''
+//     for (let i = 0; i < arr.length; i++){
+//         crateImagesCard(arr[i])
+//     }
+// }
+
+const gameList = (arr) => {
+    list.innerHTML = ""
+    arr.forEach(element => {
+        let newList = document.createElement('li')
+        newList.textContent = element
+        list.appendChild(newList)
+    })
+}
+
+
+
+const getGame = evt => {
+    axios.get('http://localhost:4000/api/games')
+    .then(response => {
+        console.log(response.data)
+        gameList(response.data)
+    })
+    .catch(err => console.log(err))
+}
+
+
+
+
+
+
+
+
+
+
+
+gameBtn.addEventListener('click', getGame)
+
+
+
+
+
+
 const createMovieList = arr => {
     movieList.innerHTML = ""
     arr.forEach((movie,index) => {

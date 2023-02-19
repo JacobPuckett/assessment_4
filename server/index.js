@@ -14,12 +14,17 @@ const {
     addMovie,
     deleteMovie,
     getMovie,
-    editMovie
+    editMovie,
+    getGame
+
+    // getImg
  } = require('./controller')
 
  app.get("/api/compliment", getCompliment);
  app.get("/api/fortune", getFortune)
 
+// app.post("/api/imgs/:img", getImg)
+app.get('api/games', getGame)
 
 app.get("/api/movies", getMovie)
 app.delete("/api/movies/:index", deleteMovie)

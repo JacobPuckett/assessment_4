@@ -1,4 +1,6 @@
 let arr = ["Batman", "Elf", "Spiderman", "JamesBond", "Superman"]
+// let images = require("./db.json")
+
 
 module.exports = {
 
@@ -35,5 +37,34 @@ module.exports = {
         let { index, newMovie } = req.body
         arr.splice(+index,1,newMovie)
         res.status(200).send(arr)
+    },
+    // getImg: (req,res) => {
+    //     let { imgURL } = req.body
+    //     let newImg = {
+    //         id: imgURL
+    //     }
+    //     res.status(200).send(arr)
+    // }
+
+
+    getGame: (req,res) => {
+        let gamesArr=["Dark Souls", "Elden Ring"]
+        res.status(200).send(gamesArr)
     }
+    
 }
+
+
+
+// let gamesArr = [
+// {
+//     gameName: "Dark Souls",
+//     rated: "M"
+// },
+// {
+//     gameName: "Elden Ring",
+//     rated: "M"
+// }
+// ]
+
+
