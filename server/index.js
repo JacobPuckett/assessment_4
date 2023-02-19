@@ -15,8 +15,8 @@ const {
     deleteMovie,
     getMovie,
     editMovie,
-    getGame
-
+    getGame,
+    deleteGame
     // getImg
  } = require('./controller')
 
@@ -24,7 +24,9 @@ const {
  app.get("/api/fortune", getFortune)
 
 // app.post("/api/imgs/:img", getImg)
-app.get('api/games', getGame)
+app.get('/api/games', getGame)
+app.delete('/api/delete', deleteGame)
+
 
 app.get("/api/movies", getMovie)
 app.delete("/api/movies/:index", deleteMovie)

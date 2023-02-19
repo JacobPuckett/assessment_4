@@ -12,6 +12,7 @@ const baseURL = 'http://localhost:4000/api/movies/'
 
 // const displayCallBack = ({ data: images }) => displayImg(images)
 const gameBtn = document.querySelector("#get-games")
+const deleteBtn = document.querySelector('#delete-games')
 // const forms = document.querySelector('#forms')
 // let imgURL = document.querySelector('#img')
 
@@ -42,6 +43,14 @@ const getGame = evt => {
     .catch(err => console.log(err))
 }
 
+const deleteGame = evt => {
+    axios.delete('http://localhost:4000/api/delete')
+    .then(res => {
+        gameList(res.data)
+        alert('Games have been deleted')
+    })
+    .catch(err => console.log(err))
+}
 
 
 
@@ -49,8 +58,7 @@ const getGame = evt => {
 
 
 
-
-
+deleteBtn.addEventListener('click', deleteGame)
 
 gameBtn.addEventListener('click', getGame)
 

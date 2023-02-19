@@ -1,6 +1,6 @@
 let arr = ["Batman", "Elf", "Spiderman", "JamesBond", "Superman"]
 // let images = require("./db.json")
-
+let gamesArr=["Dark Souls", "Elden Ring"]
 
 module.exports = {
 
@@ -48,7 +48,15 @@ module.exports = {
 
 
     getGame: (req,res) => {
-        let gamesArr=["Dark Souls", "Elden Ring"]
+        console.log('hello')
+        res.status(200).send(gamesArr)
+    },
+
+    deleteGame: (req,res) => {
+        for(let i = 0; i < gamesArr.length; i++){
+            gamesArr.splice(0,gamesArr.length)
+        }
+
         res.status(200).send(gamesArr)
     }
     
